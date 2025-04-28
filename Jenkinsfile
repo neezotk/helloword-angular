@@ -1,7 +1,7 @@
 pipeline {
     environment {
         APP_NAME = "helloworld-angular"
-        PORT = 8181
+        PORT = 9090
         DOCKER_USER = "neezo"
         DOCKER_IMAGE = "${DOCKER_USER}/${APP_NAME}"
         TAG = sh(script: 'date +%Y%m%d%H%M', returnStdout: true).trim()
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        docker run --name ${APP_NAME} -d -p 80:${PORT} ${DOCKER_IMAGE}:${TAG}
+                        docker run --name ${APP_NAME} -d -p ${PORT}:80 ${DOCKER_IMAGE}:${TAG}
                         sleep 20
                     """
                 }
