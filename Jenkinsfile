@@ -1,7 +1,7 @@
 pipeline {
     environment {
         APP_NAME = "helloworld-angular"
-        PORT = 9090
+        PORT = 8181
         DOCKER_USER = "neezo"
         DOCKER_IMAGE = "${DOCKER_USER}/${APP_NAME}"
         TAG = sh(script: 'date +%Y%m%d%H%M', returnStdout: true).trim()
