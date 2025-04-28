@@ -6,7 +6,7 @@ pipeline {
         DOCKER_IMAGE = "${DOCKER_USER}/${APP_NAME}"
         TAG = sh(script: 'date +%Y%m%d%H%M', returnStdout: true).trim()
     }
-    
+    agent any
     stages {
         stage('Build image') {
             agent any
