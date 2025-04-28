@@ -1,5 +1,4 @@
 pipeline {
-    agent none
     environment {
         APP_NAME = "helloworld-springboot"
         PORT = 9090
@@ -23,7 +22,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        docker run --name ${APP_NAME} -d -p ${PORT}:${PORT} ${DOCKER_IMAGE}:${TAG}
+                        docker run --name ${APP_NAME} -d -p 80:${PORT} ${DOCKER_IMAGE}:${TAG}
                         sleep 20
                     """
                 }
