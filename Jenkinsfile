@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        APP_NAME = "helloworld-springboot"
+        APP_NAME = "helloworld-angular"
         PORT = 9090
         DOCKER_USER = "neezo"
         DOCKER_IMAGE = "${DOCKER_USER}/${APP_NAME}"
